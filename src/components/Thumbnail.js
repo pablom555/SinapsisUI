@@ -13,7 +13,8 @@ const Thumbnail = ({thumbnail}) => {
       <img
         src={thumbnail.url}
         alt=""
-        className="w-full object-cover object-center opacity-50 hover:opacity-100 focus:opacity-100 transition duration-500 transform hover:-translate-y-3 hover:scale-150 cursor-pointer"
+        className="w-full object-cover object-center opacity-50 hover:opacity-100 focus:opacity-100 transition duration-500 transform hover:-translate-y-3 hover:scale-150"
+        
       />
       <span className="absolute z-10 top-1 left-3 text-xs md:text-base text-gray-900 ">
         {thumbnail.url}
