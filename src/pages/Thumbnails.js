@@ -13,20 +13,18 @@ const Thumbnails = () => {
   const {thumbnails, loading} = useThumbnailState();
 
   useEffect(() => {
-    console.log('loading', loading);
     console.log('thumbnails', thumbnails);
 
     return () => {
-      console.log('se desmonta');
       cleanThumbnails(thumbnailDispatch);
     };
-  }, [thumbnails, loading, thumbnailDispatch]);
+  }, [thumbnails, thumbnailDispatch]);
 
-  return loading || !thumbnails.length  ? (
+  return loading || !thumbnails.length ? (
     <Loading />
   ) : (
     <Layout>
-      <ThumbnailsContainer/>
+      <ThumbnailsContainer />
     </Layout>
   );
 };

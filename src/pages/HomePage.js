@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useAuth0} from '@auth0/auth0-react';
 import {useHistory} from 'react-router-dom';
-import { toast, snackbar } from 'tailwind-toast';
+import { toast } from 'tailwind-toast';
 import Layout from './Layout';
 import Loading from '../components/Loading';
 import ButtonUpload from '../components/ButtonUpload';

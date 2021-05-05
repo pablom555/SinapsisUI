@@ -6,7 +6,6 @@ import {container} from './../config/motion.config';
 
 const Header = () => {
   const {logout, user} = useAuth0();
-  console.log(user);
 
   return (
     <header className="bg-gray-900 body-font" style={{height: '10%'}}>
