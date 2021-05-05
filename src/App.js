@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth0Provider} from '@auth0/auth0-react';
 import HomePage from './pages/HomePage';
 import Thumbnails from './pages/Thumbnails';
@@ -20,10 +15,6 @@ function App() {
       <Router>
         <Switch>
           <PublicRoute exact path="/login" component={LoginPage} />
-
-          <Route exact path="/signin">
-            <Redirect to="/login" />
-          </Route>
 
           <PrivateRoute exact path="/" component={HomePage} />
           <PrivateRoute exact path="/thumbnails" component={Thumbnails} />

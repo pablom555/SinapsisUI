@@ -1,6 +1,5 @@
-const getThumbnails = (dispatch, {formData}) => {
-  // Lo pongo aca para que cada vez que se llama esta funcion se genere
-  // un ID diferente y mute el objeto
+const getThumbnails = async (dispatch, {formData}) => {
+
   const mockThumbnail = {
     problem: false,
     data: [
@@ -11,14 +10,13 @@ const getThumbnails = (dispatch, {formData}) => {
   };
 
   try {
+
     dispatch({type: 'THUMBNAIL_REQUEST'});
 
-    /*
-      Aca Podria ir llamado a API thumbnail-generator-api
-      enviando formData con la imagen
-    */
-
-    const {data, problem} = mockThumbnail;
+    // Simulacion llamada API
+    const {data, problem} = await new Promise((resolve, reject) => {
+      setTimeout(() => resolve(mockThumbnail), 2000);
+    });
 
     if (problem) {
       dispatch({type: 'THUMBNAIL_ERROR', problem});
@@ -30,11 +28,9 @@ const getThumbnails = (dispatch, {formData}) => {
   }
 };
 
-
-
 const cleanThumbnails = dispatch => {
   const data = [];
   dispatch({type: 'THUMBNAIL_SUCCESS', data});
-}
+};
 
 export {getThumbnails, cleanThumbnails};

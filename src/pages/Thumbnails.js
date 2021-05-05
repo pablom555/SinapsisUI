@@ -13,12 +13,12 @@ const Thumbnails = () => {
   const {thumbnails, loading} = useThumbnailState();
 
   useEffect(() => {
-    console.log('thumbnails', thumbnails);
 
     return () => {
       cleanThumbnails(thumbnailDispatch);
     };
-  }, [thumbnails, thumbnailDispatch]);
+
+  }, [thumbnailDispatch]);
 
   return loading || !thumbnails.length ? (
     <Loading />

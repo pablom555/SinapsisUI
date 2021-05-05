@@ -22,6 +22,7 @@ const ButtonUpload = ({onChange}) => {
           onChange={onChange}
           onClick={e => (e.target.value = null)}
         />
+        <span className="text-gray-900 absolute top-6 left-20 z-10 text-lg font-bold">Upload</span>
       </div>
     </>
   );
